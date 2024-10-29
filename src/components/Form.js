@@ -44,7 +44,7 @@ const Form = () => {
   }
   return (
     <form onSubmit={handleSubmit} align='center'>
-      <Input
+      <Input 
         label="User Name"
         typeName="text"
         name="userName"

@@ -7,6 +7,9 @@ const HomePage = () => {
     return ( 
         <div className={styles.body}>
         <Header>LOGIN</Header>
+        
+        <p>login as a user or Administrator </p>
+        
         <div id="Buttons" className={styles.buttons}>
         <Button>Administrator</ Button>
         <Button>User</ Button>
