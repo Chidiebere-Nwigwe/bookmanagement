@@ -1,7 +1,10 @@
 import Header from "./Header";
+import './HomePage.module.css'
 const UserPage = () => {
     return ( 
-        <Header>WILL BE WORKED ON</Header>
+        <div align='center'>
+            <Header>WILL BE WORKED ON</Header>
+        </div>
 
      );
 }

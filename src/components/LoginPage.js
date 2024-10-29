@@ -7,7 +7,9 @@ import Form from './Form';
 const LoginPage = () => {
     return ( 
         <>
-        <Header>Administrator Login</Header>
+            <div align ='center'>
+                <Header>Administrator Login</Header>
+            </div>
         <Form />
         <Footer />
         </>
