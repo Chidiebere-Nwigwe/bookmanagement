@@ -28,7 +28,7 @@
     transition: 1s;
 }
 .button:hover{
-    background: #fff;
+    background: #3d9bb7;
     color: #50d3fb;
 }
 .p{
@@ -37,7 +37,13 @@
 .header{
     margin-top: 10%;
 }
-.footers{
+/* .FooterPosition{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+} */
+/* .footers{
     position: absolute;
     text-align: center;
     top: 95%;
@@ -48,7 +54,34 @@
     position: absolute;
     text-align: center;
     bottom: 0%;
+} */
+.footers {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 0;
+    background-color: #00a8dbc5;
+    text-align: center;
+    transform: translateY(0);
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    color: #8f8f8f;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .button {
+        /* width: 90%; */
+        width: 300%;
+        font-size: 19px;
+    }
+}
+
 .span{
     color: #50d3fb;
 }
