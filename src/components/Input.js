@@ -1,9 +1,10 @@
+import styles from './HomePage.module.css'
 const Input = ({label,typeName, name, value, onChange}) => {
     return ( 
-        <div>
-        <label htmlFor={name}>{label}:</label>
+        <div className={styles.inputDiv}>
+        <label htmlFor={name} className={styles.label}>{label}:</label>
         <br />
-        <input type={typeName}id={name} name={name} value={value} onChange={onChange}/>
+        <input className={styles.input} type={typeName}id={name} name={name} value={value} onChange={onChange}/>
         </div>
      );
 }

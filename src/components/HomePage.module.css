@@ -1,7 +1,12 @@
 .body{
     text-align: center;
-    background-color: #fff;
-    /* height: 100vh; */
+}
+.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+
 }
 .buttons{
     display: flex;
@@ -51,4 +56,37 @@
 }
 .span{
     color: #50d3fb;
+}
+.highlighted {
+    color: #fff;
+ }
+.label{
+    color: #fff;
+    font-size: larger;
+    
+}
+.input{
+    border: 0;
+    outline: 0;
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bolder;
+    padding-left: 10px;
+}
+.inputDiv{
+    margin-top: 40px;
+}
+.buttonForForm{
+    width: 350px;
+    height: 40px;
+    border-radius: 5px;
+    background: #0b617b;
+    color: #fff;
+    text-align: center;
+    outline: 0;
+    border: 0;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
