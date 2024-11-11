@@ -33,7 +33,7 @@
     transition: 1s;
 }
 .button:hover{
-    background: #fff;
+    background: #3d9bb7;
     color: #50d3fb;
 }
 .p{
@@ -42,14 +42,14 @@
 .header{
     margin-top: 10%;
 }
-.footers{
+.footers {
     position: absolute;
     text-align: center;
     top: 95%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
-.footer{
+.footer {
     position: absolute;
     text-align: center;
     bottom: 0%;

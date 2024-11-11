@@ -12,4 +12,3 @@ const Footer = ({highlighted}) => {
 }
  
 export default Footer;
-
