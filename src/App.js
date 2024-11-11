@@ -4,6 +4,9 @@ import HomePage from './components/HomePage.js'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UserPage from './components/UserPage.js';
 import Administrator from './components/Administrator.js'
+
+// added the below
+import Form from './components/Form.js'
 import Form from './components/Form.js';
 function App() {
   return (
@@ -13,6 +16,8 @@ function App() {
         <Route path='/login' element={<Form />} />
 
         <Route path='/user' element={<UserPage />} />
+
+        {/* i added the below */}
         <Route path='/administrator' element={<Administrator />} />
       </Routes>
 
