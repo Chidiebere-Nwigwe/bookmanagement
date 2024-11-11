@@ -1,35 +1,61 @@
 import Input from "./Input";
-import Button from "./Button";
-import { useState } from "react";
-
-//i added this
-import { useNavigate } from "react-router-dom";
-
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import styles from './HomePage.module.css'
+import Footer from "./Footer";
 
 const Form = () => {
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
+  const [token, setToken] = useState('');
+  const [highlighted, setHighlighted] = useState(true);
+
   const [formData, setFormData] = useState({
-    userName: "",
+    username: "",
     password: "",
   });
 
-  const navigate = useNavigate();
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    try {
+    const response = await fetch('http://localhost:7000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)    
+    });
 
-  function handleSubmit(e) {
-    e.preventDefault(); // to prevent default of form in html
-    console.log(formData);
+    if (!response.ok) {
+      // Handle login failure
+      const data = await response.json();
+      setError(data.message || 'Login failed');
+      return;
+    }
+    const data = await response.json();
+    setToken(data.token);  
+    localStorage.setItem('token', data.token);
+    navigate('/administrator');
 
-                    // --i added the below---
-    //makes sure ythe user inputes the right userName and password...
-    if (formData.userName === "Admin" && formData.password === "Admin1234") {
-      navigate("/administrator");
-    } else {
-      alert("Invalid username or password");
-    }//what i added end here
+    setError('');
+  } catch (err) {
+    console.error('Login failed', err);
+    setError('An error occurred while logging in');
   }
+
+  }
+
+  useEffect(()=>{
+    document.body.style.backgroundColor = '#50d3fb';
+
+    return () =>{
+      document.body.style.backgroundColor = '';
+    }
+  }, [])
 
   function handleReset() {
     setFormData({
-      userName: "",
+      username: "",
       password: "",
     });
   }
@@ -43,12 +69,14 @@ const Form = () => {
     }));
   }
   return (
-    <form onSubmit={handleSubmit} align='center'>
-      <Input 
+    <div >
+    <form onSubmit={handleSubmit} className={styles.form}>
+       {/* <form> */}
+      <Input
         label="User Name"
         typeName="text"
-        name="userName"
-        value={formData.userName}
+        name="username"
+        value={formData.username}
         onChange={handleChange}
       ></Input>
       <br />
@@ -59,11 +87,13 @@ const Form = () => {
         value={formData.password}
         onChange={handleChange}
       ></Input>
-      <br/>
-      <div align='left'>
-      <Button onClick={handleReset}>Login</Button>
-      </div>
+      <button className={styles.buttonForForm}>Login</button>
+      {/* <Button >Login</Button> */}
+      {error && <p style={{fontSize: 'larger', color:'Red'}}>{error}</p>}
     </form>
+    <Footer highlighted={highlighted}/>
+    </div>
+
   );
 };
 
