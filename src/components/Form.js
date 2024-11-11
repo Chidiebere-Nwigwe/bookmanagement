@@ -4,10 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import styles from './HomePage.module.css'
 import Footer from "./Footer";
 
-//i added this
-import { useNavigate } from "react-router-dom";
-
-
 const Form = () => {
   const navigate = useNavigate();
   const [error, setError] = useState('');

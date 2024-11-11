@@ -32,7 +32,6 @@ const Button = ({onClick, children}) => {
             navigate('/user');
         }
         if(children == "Login" ){
-            // {onClick}
             console.log("lofinn")
             {onClick}
             //'navigate('/administrator');
