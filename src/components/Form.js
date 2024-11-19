@@ -1,21 +1,61 @@
 import Input from "./Input";
-import Button from "./Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import styles from './HomePage.module.css'
+import Footer from "./Footer";
 
 const Form = () => {
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
+  const [token, setToken] = useState('');
+  const [highlighted, setHighlighted] = useState(true);
+
   const [formData, setFormData] = useState({
-    userName: "",
+    username: "",
     password: "",
   });
 
-  function handleSubmit(e) {
-    e.preventDefault(); // to prevent default of form in html
-    console.log(formData);
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    try {
+    const response = await fetch('http://localhost:7000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)    
+    });
+
+    if (!response.ok) {
+      // Handle login failure
+      const data = await response.json();
+      setError(data.message || 'Login failed');
+      return;
+    }
+    const data = await response.json();
+    setToken(data.token);  
+    localStorage.setItem('token', data.token);
+    navigate('/administrator');
+
+    setError('');
+  } catch (err) {
+    console.error('Login failed', err);
+    setError('An error occurred while logging in');
   }
+
+  }
+
+  useEffect(()=>{
+    document.body.style.backgroundColor = '#50d3fb';
+
+    return () =>{
+      document.body.style.backgroundColor = '';
+    }
+  }, [])
 
   function handleReset() {
     setFormData({
-      userName: "",
+      username: "",
       password: "",
     });
   }
@@ -29,12 +69,14 @@ const Form = () => {
     }));
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <div >
+    <form onSubmit={handleSubmit} className={styles.form}>
+       {/* <form> */}
       <Input
         label="User Name"
         typeName="text"
-        name="userName"
-        value={formData.userName}
+        name="username"
+        value={formData.username}
         onChange={handleChange}
       ></Input>
       <br />
@@ -45,8 +87,13 @@ const Form = () => {
         value={formData.password}
         onChange={handleChange}
       ></Input>
-      <Button onClick={handleReset}>Login</Button>
+      <button className={styles.buttonForForm}>Login</button>
+      {/* <Button >Login</Button> */}
+      {error && <p style={{fontSize: 'larger', color:'Red'}}>{error}</p>}
     </form>
+    <Footer highlighted={highlighted}/>
+    </div>
+
   );
 };
 

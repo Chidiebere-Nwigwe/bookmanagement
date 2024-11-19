@@ -1,7 +1,7 @@
 import Header from "./Header";
 const UserPage = () => {
     return ( 
-        <Header>WILL BE WORKED ON</Header>
+        <Header>USER WILL BE WORKED ON BY ANTHONY AND CHIDI</Header>
 
      );
 }
