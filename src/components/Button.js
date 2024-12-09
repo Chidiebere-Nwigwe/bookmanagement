@@ -33,7 +33,7 @@ const Button = ({onClick, children}) => {
         }
         if(children == "Login" ){
             console.log("lofinn")
-            {onClick}
+           // {onClick}
             //'navigate('/administrator');
         }
 

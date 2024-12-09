@@ -37,24 +37,47 @@ const UserPage = () => {
         FetchBooks();
     }, [])
 
-    return ( 
-        <div>
-            {
-                books.map((book) => (
-                    <div key={book.id}>
-                        <Link className={styles.link}>
-                            <img src={book.coverImage} alt="Product Image"/>
-                            <h1>Title: {book.title}</h1>
-                            <h2>Author: {book.author}</h2>
-                            <p>Description: {book.description}</p>
-                            <p>Publication Date: {book.publicationDate}</p>
-                        </Link>               
-                    </div>
-                ))
-            }      
-        </div>
+    useEffect(()=>{
+      document.body.style.backgroundImage = 'url(./backgroundimg.png)';
+      document.body.style.backgroundSize = 'cover'; // Optional, to make sure the background covers the entire screen
+      document.body.style.backgroundRepeat = 'no-repeat'; 
+      document.body.style.backgroundPosition = 'center';
+      document.body.style.margin = '0';
+      document.body.style.padding = '0';
 
-     );
-}
  
+     return () =>{
+       document.body.style.backgroundColor = '';
+       document.body.style.backgroundSize = '';
+       document.body.style.backgroundRepeat = '';
+       document.body.style.backgroundPosition = '';
+       document.body.style.height = '';
+       document.body.style.margin = '';
+       document.body.style.padding = '';
+     }
+   }, [])
+ 
+
+   return (
+    <div className={styles.cardContainer}>
+        {books.length > 0 ? (
+            books.map((book) => (
+                <div key={book.id} className={styles.card}>
+                    <img src={book.coverImage} alt={`${book.title} Cover`} />
+                    <h1>{book.title}</h1>
+                    <h2> {book.author}</h2>
+                    {/* <p>{book.description}</p>
+                    <p>Published: {book.publicationDate}</p> */}
+                    <Link to={`/book/${book.id}`} className={styles.link}>
+                        View Details
+                    </Link>
+                </div>
+            ))
+        ) : (
+            <p>{error || 'Loading books...'}</p>
+        )}
+    </div>
+);
+};
+
 export default UserPage;
