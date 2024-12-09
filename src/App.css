@@ -1,0 +1,195 @@
+/* /* body{
+    padding: 25px;
+    background-image: url("./img/Group\ 38.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 530vh 90vw; */
+    /* background-size: 1690px 1090px; */
+    /* background-size: 860px 1090px; */
+    /* height: 100vh; */
+    /* width: 100vw; */
+
+
+/* } */
+
+/* body{
+    padding: 25px;
+    background-image: url("./img/Group\ 38.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    /* background-size: 860px ; */
+    /* height: 100vh; */
+    /* width: 100vw; */
+    /* overflow: hidden;
+
+
+} */
+/* body {
+    margin: 0;
+    padding: 0;
+    background-image: url("./img/Group\ 38.png"); -Ensure this path is correct
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 113% 106%; -Force the image to stretch to fill both height and width
+    height: 100vh; -Full viewport height
+    width: 100vw; -Full viewport width
+    overflow: hidden; -Prevent unwanted scrollbars
+} */
+
+
+
+
+*
+{
+    padding:0;
+    margin:0;
+    /* box-sizing: border-box; */
+    
+}
+/* body
+{
+  background-color: brown;
+} */
+ 
+.header
+{
+    text-align: center;
+    font-size: larger;
+}
+ 
+.Admin_Link
+{
+    text-decoration: none;
+    color:black;
+    background-color: rgb(214, 204, 204);
+    width:90%;
+    height:100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 14px;
+    padding: 14px 40px;
+    border-radius: 12px;
+    box-shadow: -1px 6px 6px 5px rgba(0, 0, 0, 0.1);
+    /* border: 2px solid blue; */
+}
+.Admin_card
+{
+    display:inline-flex;
+    flex-direction: row;
+    margin-top: -12px;
+    padding: 0 12px;
+   
+}
+.card_Div{
+    overflow: hidden;
+    box-shadow: -1px 6px 6px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjust width to fit within the layout */
+    padding: 20px;
+    border-radius: 10px;
+}
+.bookTitle
+{
+    margin:auto;
+}
+.bookImg
+{
+  width:90px;
+  height:70px;
+  margin:12px;
+}
+.iconBox
+{
+   
+    padding: 0 10px;
+    padding-top: 10px;
+    margin-left: 30px;
+}
+.icon
+{
+    width:50px;
+    height:50px;
+    margin:auto;
+    padding: 0 5px;
+   margin-left: 18px;
+}
+ 
+/* .AdminBookContainer
+{
+   padding:20px;
+   display:flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: space-around;
+} */
+.AdminBookContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap in a grid-like format */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 20px; /* Space between cards */
+    max-height: 500px; /* Set a fixed height for the scrollable box */
+    overflow-y: auto; /* Enable vertical scrolling */
+    /* overflow-x: hidden; Prevent horizontal scrolling */
+    width: 80%; /* Adjust width to fit within the layout */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1); */
+    margin: auto; /* Automatically adjust margins to center within parent */
+}
+  
+.LogOut_btn
+{
+    background-color: #087698  ;
+    border-radius: 19px;
+    border: none;
+    padding: 12px;
+    border-radius: 16px;
+    color:white;
+    width: 100px;
+    margin-top: 50px;
+    margin-left: 30px;
+} 
+.LogOut_btn:hover{
+    background-color: #0a5f79;
+}
+.Add_btn{
+    margin-bottom: 10px;
+    background-color: #087698;
+    border-radius: 19px;
+    border: none;
+    padding: 12px;
+    border-radius: 16px;
+    color:white;
+    width: 100px;
+    margin-top: 50px;
+    margin-left: 30px;
+    /* text-align: center; */
+    /* outline: 0; */
+}
+.Add_btn:hover{
+    background-color: #0a5f79;
+}
+
+.AddBookForm{
+    background-color: rgb(211, 209, 209);
+    box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap in a grid-like format */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 20px; /* Space between cards */
+    max-height: 500px; /* Set a fixed height for the scrollable box */
+    overflow-y: auto; /* Enable vertical scrolling */
+    /* overflow-x: hidden; Prevent horizontal scrolling */
+    width: 80%; /* Adjust width to fit within the layout */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1); */
+    margin: auto;
+}
+.Admin_Div{
+    margin-top: -20px;
+}
