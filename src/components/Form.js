@@ -26,8 +26,7 @@ const Form = () => {
       body: JSON.stringify(formData)    
     });
 
-    if (!response.ok) {
-      // Handle login failure
+    if (!response.ok) {    // Handle login failure
       const data = await response.json();
       setError(data.message || 'Login failed');
       return;
@@ -46,7 +45,9 @@ const Form = () => {
   }
 
   useEffect(()=>{
-    document.body.style.backgroundColor = '#50d3fb';
+     document.body.style.backgroundImage = 'url(./backgroundimg.png)';
+     document.body.style.backgroundSize = 'cover'; // Optional, to make sure the background covers the entire screen
+     document.body.style.backgroundRepeat = 'no-repeat'; 
 
     return () =>{
       document.body.style.backgroundColor = '';
