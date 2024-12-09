@@ -10,6 +10,16 @@ const HomePage = () => {
 
     const location = useLocation();
 
+    useEffect(()=>{
+      document.body.style.backgroundColor = 'white';
+      document.body.style.backgroundSize = '';
+      document.body.style.backgroundRepeat = '';
+      document.body.style.backgroundPosition = '';
+      document.body.style.height = '';
+      document.body.style.margin = '';
+      document.body.style.padding = '';
+   }, [])
+
     useEffect(() => {
       // Check the current route and set background image accordingly
       if (location.pathname === '/administrator') {
