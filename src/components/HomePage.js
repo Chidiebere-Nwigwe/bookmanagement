@@ -11,7 +11,9 @@ const HomePage = () => {
     const location = useLocation();
 
     useEffect(()=>{
-      document.body.style.backgroundColor = 'white';
+      
+      // document.body.style.backgroundColor = 'white';
+      document.body.style.backgroundImage = 'url(/libary.jpg)';
       document.body.style.backgroundSize = '';
       document.body.style.backgroundRepeat = '';
       document.body.style.backgroundPosition = '';
@@ -25,11 +27,11 @@ const HomePage = () => {
       if (location.pathname === '/administrator') {
         document.body.style.backgroundImage = 'url(./backgroundimg.png)';
       } else {
-        document.body.style.backgroundImage = 'none';
+        document.body.style.backgroundImage = 'url(/libary.jpg)';
       }
 
       return () => {
-        document.body.style.backgroundImage = 'none';
+        document.body.style.backgroundImage = 'url(/libary.jpg)';
       };
     }, [location]); //  whenever location changes 
 

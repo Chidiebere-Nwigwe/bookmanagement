@@ -37,14 +37,16 @@
     color: #50d3fb;
 }
 .p{
-    color: #8f8f8f;
+    color: #f8f8f8;
 }
 .header{
     margin-top: 10%;
+    color: #fff;
 }
 .footers {
     position: absolute;
     text-align: center;
+    color: #fff;
     top: 95%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -102,6 +104,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #50defb;
     background-image: var(--card-bg-color);
+    background-image: url('/public/libary.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
@@ -190,3 +193,62 @@ body {
         flex: 1 1 100%; /* 1 card per row on very small screens */
     }
 }
+
+
+/* Search Bar Styling */
+.searchBar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.searchInput {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.searchInput:focus {
+    box-shadow: 0 0 5px #00796b;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.errorMessage {
+    color: red;
+    text-align: center;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 15px 10px;
+    position: absolute; /* Allow absolute positioning for centering */
+    left: 50%; /* Move to 50% of the parent's width */
+    transform: translate(-50%, -50%); /* Offset to truly center the element */
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    display: inline-block;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    background-color: #00796b;
+    padding: 10px 20px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.link:hover {
+    background-color: #005f56;
+}
+

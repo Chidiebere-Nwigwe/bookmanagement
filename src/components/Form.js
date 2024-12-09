@@ -48,9 +48,18 @@ const Form = () => {
      document.body.style.backgroundImage = 'url(./backgroundimg.png)';
      document.body.style.backgroundSize = 'cover'; // Optional, to make sure the background covers the entire screen
      document.body.style.backgroundRepeat = 'no-repeat'; 
+     document.body.style.backgroundColor = '#50defb';
+
 
     return () =>{
-      document.body.style.backgroundColor = '';
+      return () => {
+        document.body.style.backgroundImage = '';
+        document.body.style.backgroundSize = '';
+        document.body.style.backgroundRepeat = '';
+        document.body.style.backgroundPosition = '';
+        document.body.style.margin = '';
+        document.body.style.padding = '';
+    };
     }
   }, [])
 
@@ -90,7 +99,7 @@ const Form = () => {
       ></Input>
       <button className={styles.buttonForForm}>Login</button>
       {/* <Button >Login</Button> */}
-      {error && <p style={{fontSize: 'larger', color:'Red'}}>{error}</p>}
+      {error && <div className="alert"> <p className={styles.errorMessage} style={{fontSize: 'larger', color:'Red'}}>{error}</p> </div>}
     </form>
     <Footer highlighted={highlighted}/>
     </div>
