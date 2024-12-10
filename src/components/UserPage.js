@@ -2,6 +2,7 @@ import Header from "./Header";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from './HomePage.module.css';
+import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {
 
@@ -33,6 +34,13 @@ const UserPage = () => {
       } 
     }
 
+    const navigate = useNavigate();
+const token = localStorage.getItem('token');
+const handleLogOut = () => {
+    localStorage.removeItem('token');
+    navigate('/');
+};
+
     useEffect(()=>{
         FetchBooks();
     }, [])
@@ -59,6 +67,9 @@ const UserPage = () => {
  
 
    return (
+    <div>
+            <button className="Log_Out" onClick={handleLogOut}>Log Out</button>
+        {/* </div> */}
     <div className={styles.cardContainer}>
         {books.length > 0 ? (
             books.map((book) => (
@@ -76,7 +87,7 @@ const UserPage = () => {
         ) : (
             <p>{error || 'Loading books...'}</p>
         )}
-    </div>
+    </div></div>
 );
 };
 
