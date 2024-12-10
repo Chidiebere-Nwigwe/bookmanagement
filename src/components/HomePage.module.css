@@ -1,3 +1,4 @@
+
 .body{
     text-align: center;
 }
@@ -20,7 +21,7 @@
     width: 400px;
     height: 40px;
     background: #50d3fb;
-    color: #fff;
+    color: white;
     text-align: center;
     outline: 0;
     border: 0;
@@ -58,10 +59,10 @@
     color: #50d3fb;
 }
 .highlighted {
-    color: #fff;
+    color: white;
  }
 .label{
-    color: #fff;
+    color: white;
     font-size: larger;
     
 }
@@ -83,16 +84,134 @@
     height: 40px;
     border-radius: 5px;
     background: #0b617b;
-    color: #fff;
+    color: white;
     text-align: center;
     outline: 0;
     border: 0;
     margin-top: 100px;
     margin-bottom: 50px;
 }
+a{
+    color: rgb(230, 230, 230);
+    text-decoration: underline;
+}
+
+.background{
+    margin: 0;
+    padding: 0;
+    background-image: url("C:\Users\ericj\source\repos\React_Web Programming\GitHub shared repository\bookmanagement\public\backgroundimg.png");
+    /* background-image: url("./img/Group\ 38.png"); Ensure this path is correct */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 113% 117%; /* Force the image to stretch to fill both height and width */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden; /*Prevent unwanted scrollbars*/
+}
+
+.passwordToggleButton{
+    background-color: #27b1db00;
+    border-radius: 19px;
+    border: none;
+}
 
 /* ////FOR USER PAGE done by ANTHONY AND CHIDI//// */
-.link{
+
+
+
+
+body {
+    margin: 0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background-color: #50defb;
+    background-image: var(--card-bg-color);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    
+}
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    /* max-width: 1200px;
+    margin: 0 auto; */
+}
+
+
+.card {
+    flex: 1 1 300px;
+    max-width: 300px;
+    /* background-color: #ffffff; */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 10px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.card h1{
+    font-size: 1.2rem;
+    color: #00796b;
+    margin-bottom: 8px;
+}
+
+.card .link {
+    display: inline-block;
     text-decoration: none;
-    color: black;
+    color: white;
+    background-color: #00796b;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.card .link:hover {
+    background-color: #005f56;
+}
+
+.card h2 {
+    font-size: 0.9rem;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 1200px) {
+    .card {
+        flex: 1 1 calc(33.33% - 40px); /* 3 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 40px); /* 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%; /* 1 card per row on very small screens */
+    }
 }
