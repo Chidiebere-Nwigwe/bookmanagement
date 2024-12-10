@@ -102,6 +102,10 @@ const Form = () => {
 </svg> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#3743dc" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M3 13c3.6-8 14.4-8 18 0"/><path fill="#3743dc" d="M12 17a3 3 0 1 1 0-6a3 3 0 0 1 0 6"/></g></svg>}
           </button></div>
       <button className={styles.buttonForForm}>Login</button>
+      <div align="center">
+      <a href="/" className="go_back" >Go Back</a>
+      </div>
+      <br />
       {/* <Button >Login</Button> */}
       {error && <p style={{fontSize: 'larger', color:'Red'}}>{error}</p>}
     </form>

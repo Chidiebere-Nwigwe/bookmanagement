@@ -155,6 +155,23 @@
 .LogOut_btn:hover{
     background-color: #0a5f79;
 }
+
+.Log_Out{
+    background-color: #087698  ;
+    border-radius: 19px;
+    border: none;
+    padding: 9px;
+    border-radius: 16px;
+    color:white;
+    width: 100px;
+    margin-top: 27px;
+    margin-left: 50px;
+    margin-bottom: -26px;
+} 
+.Log_Out:hover{
+    background-color: #0a5f79;
+}
+
 .Add_btn{
     margin-bottom: 10px;
     background-color: #087698;
@@ -192,4 +209,42 @@
 }
 .Admin_Div{
     margin-top: -20px;
+}
+
+.EditBookForm{
+    background-color: rgb(211, 209, 209);
+    box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap in a grid-like format */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 20px; /* Space between cards */
+    max-height: 500px; /* Set a fixed height for the scrollable box */
+    overflow-y: auto; /* Enable vertical scrolling */
+    /* overflow-x: hidden; Prevent horizontal scrolling */
+    width: 80%; /* Adjust width to fit within the layout */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1); */
+    margin: auto;
+}
+.alert{
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.notification{
+    color: green;
+    text-align: center;
+    background-color: #45bae1;
+    border: 2px solid #21aedd;
+    padding: 15px 10px;
+    position: absolute; /* Allow absolute positioning for centering */
+    left: 50%; /* Move to 50% of the parent's width */
+    transform: translate(-50%, -50%); /* Offset to truly center the element */
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    display: inline-block;
 }
