@@ -1,9 +1,10 @@
+
 *
 {
     padding:0;
     margin:0;
     /* box-sizing: border-box; */
-   
+
 }
 /* body
 {
@@ -109,7 +110,7 @@
     /* box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1); */
     margin: auto; /* Automatically adjust margins to center within parent */
 }
- 
+
 .LogOut_btn
 {
     background-color: #087698  ;
@@ -121,11 +122,7 @@
     width: 100px;
     margin-top: 50px;
     margin-left: 30px;
-}
-.LogOut_btn:hover{
-    background-color: #0a5f79;
-}
- 
+  
 .Log_Out{
     background-color: #087698  ;
     border-radius: 19px;
@@ -137,11 +134,11 @@
     margin-top: 27px;
     margin-left: 50px;
     margin-bottom: -26px;
-}
+} 
 .Log_Out:hover{
     background-color: #0a5f79;
 }
- 
+
 .Add_btn{
     margin-bottom: 10px;
     background-color: #087698;
@@ -233,6 +230,7 @@
     margin-top: -20px;
 }
  
+
 .EditBookForm{
     background-color: rgb(211, 209, 209);
     box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1);
