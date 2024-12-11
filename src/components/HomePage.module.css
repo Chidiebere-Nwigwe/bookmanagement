@@ -1,4 +1,4 @@
-
+/* /////FOR USER BOOK LIST */
 .body{
     text-align: center;
 }
@@ -7,8 +7,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-60%);
+    background-color: rgba(245, 245, 245, 0.568);
+    padding: 2%;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
 
 }
+
 .buttons{
     display: flex;
     flex-direction: column;
@@ -21,7 +27,7 @@
     width: 400px;
     height: 40px;
     background: #50d3fb;
-    color: white;
+    color: rgba(51, 15, 15, 0.502);
     text-align: center;
     outline: 0;
     border: 0;
@@ -38,14 +44,16 @@
     color: #50d3fb;
 }
 .p{
-    color: #8f8f8f;
+    color: #f8f8f8;
 }
 .header{
     margin-top: 10%;
+    color: rgba(51, 15, 15, 0.61);
 }
 .footers {
     position: absolute;
     text-align: center;
+    color: #fff;
     top: 95%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -59,13 +67,14 @@
     color: #50d3fb;
 }
 .highlighted {
-    color: white;
+    color: #fff;
  }
 .label{
-    color: white;
+    color: #fff;
     font-size: larger;
     
 }
+
 .input{
     border: 0;
     outline: 0;
@@ -79,42 +88,49 @@
 .inputDiv{
     margin-top: 40px;
 }
+.buttonForFormDiv{
+        display: flex;
+        flex-direction: column;      
+}
+#loginBtn{
+    margin-top: 100px;
+}
 .buttonForForm{
     width: 350px;
     height: 40px;
     border-radius: 5px;
     background: #0b617b;
-    color: white;
+    color: #fff;
     text-align: center;
     outline: 0;
     border: 0;
-    margin-top: 100px;
     margin-bottom: 50px;
+    text-decoration: none;
 }
 a{
     color: rgb(230, 230, 230);
     text-decoration: underline;
 }
-
-.background{
-    margin: 0;
-    padding: 0;
-    background-image: url("C:\Users\ericj\source\repos\React_Web Programming\GitHub shared repository\bookmanagement\public\backgroundimg.png");
-    /* background-image: url("./img/Group\ 38.png"); Ensure this path is correct */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 113% 117%; /* Force the image to stretch to fill both height and width */
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
-    overflow: hidden; /*Prevent unwanted scrollbars*/
-}
-
 .passwordToggleButton{
     background-color: #27b1db00;
     border-radius: 19px;
     border: none;
 }
-
+.Log_Out{
+    background-color: #087698  ;
+    border-radius: 19px;
+    border: none;
+    padding: 9px;
+    border-radius: 16px;
+    color:white;
+    width: 100px;
+    margin-top: 27px;
+    margin-left: 50px;
+    margin-bottom: -26px;
+}
+.Log_Out:hover{
+    background-color: #0a5f79;
+}
 /* ////FOR USER PAGE done by ANTHONY AND CHIDI//// */
 
 
@@ -124,8 +140,9 @@ body {
     margin: 0;
     padding:0;
     font-family: Arial, sans-serif;
-    background-color: #50defb;
+    /* background-color: #50defb; */
     background-image: var(--card-bg-color);
+    background-image: url('/public/libary.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
@@ -143,7 +160,6 @@ body {
     /* max-width: 1200px;
     margin: 0 auto; */
 }
-
 
 .card {
     flex: 1 1 300px;
@@ -194,7 +210,7 @@ body {
 
 .card h2 {
     font-size: 0.9rem;
-    color: #333333;
+    color: #eee3e3;
     margin-bottom: 5px;
 }
 
@@ -214,4 +230,117 @@ body {
     .card {
         flex: 1 1 100%; /* 1 card per row on very small screens */
     }
+}
+
+
+/* Search Bar Styling */
+.searchBar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.searchInput {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.searchInput:focus {
+    box-shadow: 0 0 5px #00796b;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.errorMessage {
+    color: red;
+    text-align: center;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 15px 10px;
+    position: absolute; /* Allow absolute positioning for centering */
+    left: 50%; /* Move to 50% of the parent's width */
+    transform: translate(-50%, -50%); /* Offset to truly center the element */
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    display: inline-block;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    background-color: #00796b;
+    padding: 10px 20px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.link:hover {
+    background-color: #005f56;
+}
+
+/* ////FOR BOOKDETAILS PAGE */
+.bookDetailsDiv h1{
+    font-style: italic;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bookDetailsButton{
+    height: 10vh;
+    width: 10vw;
+    margin: 10px 20px;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    border-radius: 8px;
+    background-color: #3388a2e7;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+}
+.bookDetailsButton:hover{
+    background-color: #3388a2;
+}
+.bookDetailsMainDiv{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #3d9bb742; */
+    background-color: #3388a2e7;
+    outline: 0;
+    border: 0;
+    margin: 2% 7%;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0,0.2); */
+}
+.bookDetailsImg{
+    width: 20%;
+    flex-basis: 20%;
+ 
+}
+.bookDetailsMainDiv .details span{
+    font-weight: bold;
+}
+.bookDetailsMainDiv .details{
+    padding: 0.5%;
+    margin-top: 10%;
+    flex-basis: 70%;
+    color: #fff;
+    font-size: large;
+    font-style: italic;
+}
+.bookDetailsMainDiv .details p{
+    margin: 2%;
 }

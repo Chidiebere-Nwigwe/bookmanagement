@@ -28,7 +28,7 @@ const Button = ({onClick, children}) => {
                 navigate('/login');
             }
         }
-        if(children == "User" ){
+        if(children == "See Book List" ){
             navigate('/user');
         }
         if(children == "Login" ){
