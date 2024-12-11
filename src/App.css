@@ -1,0 +1,221 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.header {
+  text-align: center;
+  font-size: larger;
+  color: rgb(58, 57, 57);
+  background-color: rgba(245, 245, 245, 0.568);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+.Admin_Link {
+  text-decoration: none;
+  color: black;
+  background-color: rgb(214, 204, 204);
+  width: 90%;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 14px;
+  padding: 14px 40px;
+  border-radius: 12px;
+  box-shadow: -1px 6px 6px 5px rgba(0, 0, 0, 0.1);
+}
+.Admin_card {
+  display: inline-flex;
+  flex-direction: row;
+  margin-top: -12px;
+  padding: 0 12px;
+}
+.card_Div {
+  overflow: hidden;
+  box-shadow: -1px 6px 6px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+}
+.bookTitle {
+  margin: auto;
+}
+.bookImg {
+  width: 90px;
+  height: 70px;
+  margin: 12px;
+}
+.iconBox {
+  padding: 0 10px;
+  padding-top: 10px;
+  margin-left: 30px;
+}
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  padding: 0 5px;
+  margin-left: 18px;
+}
+.AdminBookContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.LogOut_btn {
+  background-color: #087698;
+  border-radius: 19px;
+  border: none;
+  padding: 12px;
+  border-radius: 16px;
+  color: white;
+  width: 100px;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.LogOut_btn:hover {
+  background-color: #0a5f79;
+}
+
+.Add_btn {
+  margin-bottom: 10px;
+  background-color: #087698;
+  border-radius: 19px;
+  border: none;
+  padding: 12px;
+  border-radius: 16px;
+  color: white;
+  width: 100px;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+.Add_btn:hover {
+  background-color: #0a5f79;
+}
+
+.Admin_Div.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+}
+.AddBookForm {
+  position: fixed;
+  height: 600px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline baseline;
+  justify-content: center;
+  background-color: #0a5f79;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 2%;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1);
+}
+.AddBookForm h3,
+.AddBookForm button {
+  margin-top: 5%;
+  text-align: center;
+}
+.AddBookForm label {
+  margin-top: 5%;
+  font-weight: bold;
+}
+.AddBookForm input {
+  border: 0;
+  outline: 0;
+  padding: 1.5%;
+  margin-left: 1%;
+}
+.AddBookForm label textarea {
+  width: 100%;
+  height: 150px;
+}
+.AddBookFormButtons button {
+  width: 100%;
+  height: 100%;
+  margin-left: 15%;
+  padding: 10% auto;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  background-color: #087698;
+  font-weight: bold;
+  color: #fff;
+}
+
+.AddBookFormButtons button:hover {
+  background-color: #0a5f7935;
+  border: 1px solid black;
+  color: #000;
+}
+.AddBookFormButtons {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
+  height: 10%;
+  width: 50%;
+}
+
+.Admin_Div {
+  margin-top: -20px;
+}
+
+.EditBookForm {
+  background-color: rgb(211, 209, 209);
+  box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: auto;
+}
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out;
+}
