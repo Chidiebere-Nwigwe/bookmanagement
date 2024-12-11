@@ -1,14 +1,13 @@
-
 import Input from "./Input";
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import styles from './HomePage.module.css'
+import { useNavigate } from "react-router-dom";
+import styles from "./HomePage.module.css";
 import Footer from "./Footer";
 
 const Form = () => {
   const navigate = useNavigate();
-  const [error, setError] = useState('');
-  const [token, setToken] = useState('');
+  const [error, setError] = useState("");
+  const [token, setToken] = useState("");
   const [highlighted, setHighlighted] = useState(true);
   const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -17,53 +16,52 @@ const Form = () => {
     password: "",
   });
 
-  const handleSubmit = async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-    const response = await fetch('http://localhost:7000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)    
-    });
+      const response = await fetch("http://localhost:7000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    if (!response.ok) {    // Handle login failure
+      if (!response.ok) {
+        // Handle login failure
+        const data = await response.json();
+        setError(data.message || "Login failed");
+        return;
+      }
       const data = await response.json();
-      setError(data.message || 'Login failed');
-      return;
+      setToken(data.token);
+      localStorage.setItem("token", data.token);
+      navigate("/administrator");
+
+      setError("");
+    } catch (err) {
+      console.error("Login failed", err);
+      setError("An error occurred while logging in");
     }
-    const data = await response.json();
-    setToken(data.token);  
-    localStorage.setItem('token', data.token);
-    navigate('/administrator');
+  };
 
-    setError('');
-  } catch (err) {
-    console.error('Login failed', err);
-    setError('An error occurred while logging in');
-  }
+  useEffect(() => {
+    document.body.style.backgroundImage = "url(./libary2.jpg)";
+    document.body.style.backgroundSize = "cover"; // Optional, to make sure the background covers the entire screen
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundColor = "#50defb";
 
-  }
-
-  useEffect(()=>{
-     document.body.style.backgroundImage = 'url(./libary2.jpg)';
-     document.body.style.backgroundSize = 'cover'; // Optional, to make sure the background covers the entire screen
-     document.body.style.backgroundRepeat = 'no-repeat'; 
-     document.body.style.backgroundColor = '#50defb';
-
-
-    return () =>{
+    return () => {
       return () => {
-        document.body.style.backgroundImage = '';
-        document.body.style.backgroundSize = '';
-        document.body.style.backgroundRepeat = '';
-        document.body.style.backgroundPosition = '';
-        document.body.style.margin = '';
-        document.body.style.padding = '';
+        document.body.style.backgroundImage = "";
+        document.body.style.backgroundSize = "";
+        document.body.style.backgroundRepeat = "";
+        document.body.style.backgroundPosition = "";
+        document.body.style.margin = "";
+        document.body.style.padding = "";
+      };
     };
-    }
-  }, [])
+  }, []);
 
   function handleReset() {
     setFormData({
@@ -86,18 +84,18 @@ const Form = () => {
   };
 
   return (
-    <div >
-    <form onSubmit={handleSubmit} className={styles.form}>
-       {/* <form> */}
-      <Input
-        label="User Name"
-        typeName="text"
-        name="username"
-        value={formData.username}
-        onChange={handleChange}
-      ></Input>
-      <br />
-      <div className="password_andEye">
+    <div>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        {/* <form> */}
+        <Input
+          label="User Name"
+          typeName="text"
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+        ></Input>
+        <br />
+        <div className="password_andEye">
           <Input
             label="Password"
             typeName={passwordVisible ? "text" : "password"}
@@ -144,22 +142,33 @@ const Form = () => {
           </button>
         </div>
         <div className={styles.buttonForFormDiv}>
-        <button className={styles.buttonForForm} id={styles.loginBtn}>Login</button>
-        <div align="center">
-        <button className={styles.buttonForForm}>
-        <a href="/" className={styles.buttonForForm}>
-            Go Back
-          </a>
-        </button>    
-        </div>
+          <button className={styles.buttonForForm} id={styles.loginBtn}>
+            Login
+          </button>
+          <div align="center">
+            <button className={styles.buttonForForm}>
+              <a href="/" className={styles.buttonForForm}>
+                Go Back
+              </a>
+            </button>
+          </div>
         </div>
         <br />
         {/* <Button >Login</Button> */}
-        {error && <div className="alert"> <p className={styles.errorMessage}style={{ fontSize: "larger", color: "Red" }}>{error}</p> </div>}
+        {error && (
+          <div className="alert">
+            {" "}
+            <p
+              className={styles.errorMessage}
+              style={{ fontSize: "larger", color: "Red" }}
+            >
+              {error}
+            </p>{" "}
+          </div>
+        )}
       </form>
-    <Footer highlighted={highlighted}/>
+      <Footer highlighted={highlighted} />
     </div>
-
   );
 };
 
