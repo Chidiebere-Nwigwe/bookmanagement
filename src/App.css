@@ -1,0 +1,358 @@
+*
+{
+    padding:0;
+    margin:0;
+    /* box-sizing: border-box; */
+   
+}
+/* body
+{
+  background-color: brown;
+} */
+ 
+.header
+{
+    text-align: center;
+    font-size: larger;
+    color: rgb(58, 57, 57);
+    background-color: rgba(245, 245, 245, 0.568);
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+
+}
+ 
+.Admin_Link
+{
+    text-decoration: none;
+    color:black;
+    background-color: rgb(214, 204, 204);
+    width:90%;
+    height:100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 14px;
+    padding: 14px 40px;
+    border-radius: 12px;
+    box-shadow: -1px 6px 6px 5px rgba(0, 0, 0, 0.1);
+    /* border: 2px solid blue; */
+}
+.Admin_card
+{
+    display:inline-flex;
+    flex-direction: row;
+    margin-top: -12px;
+    padding: 0 12px;
+   
+}
+.card_Div{
+    overflow: hidden;
+    box-shadow: -1px 6px 6px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjust width to fit within the layout */
+    padding: 20px;
+    border-radius: 10px;
+}
+.bookTitle
+{
+    margin:auto;
+}
+.bookImg
+{
+  width:90px;
+  height:70px;
+  margin:12px;
+}
+.iconBox
+{
+   
+    padding: 0 10px;
+    padding-top: 10px;
+    margin-left: 30px;
+}
+.icon
+{
+    width:50px;
+    height:50px;
+    margin:auto;
+    padding: 0 5px;
+   margin-left: 18px;
+}
+ 
+/* .AdminBookContainer
+{
+   padding:20px;
+   display:flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: space-around;
+} */
+.AdminBookContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap in a grid-like format */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 20px; /* Space between cards */
+    max-height: 500px; /* Set a fixed height for the scrollable box */
+    overflow-y: auto; /* Enable vertical scrolling */
+    /* overflow-x: hidden; Prevent horizontal scrolling */
+    width: 80%; /* Adjust width to fit within the layout */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1); */
+    margin: auto; /* Automatically adjust margins to center within parent */
+}
+ 
+.LogOut_btn
+{
+    background-color: #087698  ;
+    border-radius: 19px;
+    border: none;
+    padding: 12px;
+    border-radius: 16px;
+    color:white;
+    width: 100px;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+.LogOut_btn:hover{
+    background-color: #0a5f79;
+}
+ 
+.Log_Out{
+    background-color: #087698  ;
+    border-radius: 19px;
+    border: none;
+    padding: 9px;
+    border-radius: 16px;
+    color:white;
+    width: 100px;
+    margin-top: 27px;
+    margin-left: 50px;
+    margin-bottom: -26px;
+}
+.Log_Out:hover{
+    background-color: #0a5f79;
+}
+ 
+.Add_btn{
+    margin-bottom: 10px;
+    background-color: #087698;
+    border-radius: 19px;
+    border: none;
+    padding: 12px;
+    border-radius: 16px;
+    color:white;
+    width: 100px;
+    margin-top: 50px;
+    margin-left: 30px;
+    /* text-align: center; */
+    /* outline: 0; */
+}
+.Add_btn:hover{
+    background-color: #0a5f79;
+}
+ 
+.Admin_Div.blurred {
+    filter: blur(5px);
+    pointer-events: none; /* disables interactions with the blurred background */
+}
+.AddBookForm{
+    position: fixed;
+    height: 600px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline baseline ;
+    justify-content: center;
+    background-color: #0a5f79;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 2% ;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1);
+}
+.AddBookForm h3, .AddBookForm button{
+    margin-top: 5%;
+    text-align: center;
+}
+.AddBookForm label{
+    margin-top: 5%;
+    font-weight: bold;
+ 
+}
+.AddBookForm input{
+    border: 0;
+    outline: 0;
+    padding: 1.5%;
+    margin-left: 1%;
+}
+.AddBookForm label textarea{
+    width: 100%;
+    height: 150px;
+}
+.AddBookFormButtons button{
+    width: 100%;
+    height: 100%;
+    margin-left: 15%;
+    padding: 10% auto;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;  
+    background-color: #087698;
+    font-weight: bold;
+    color: #fff;
+}
+ 
+.AddBookFormButtons button:hover{
+    background-color: #0a5f7935;
+    border: 1px solid black;
+    color: #000;
+}
+.AddBookFormButtons{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    height: 10%;
+    width: 50%;
+   
+}
+ 
+.Admin_Div{
+    margin-top: -20px;
+}
+ 
+.EditBookForm{
+    background-color: rgb(211, 209, 209);
+    box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap in a grid-like format */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 20px; /* Space between cards */
+    max-height: 500px; /* Set a fixed height for the scrollable box */
+    overflow-y: auto; /* Enable vertical scrolling */
+    /* overflow-x: hidden; Prevent horizontal scrolling */
+    width: 80%; /* Adjust width to fit within the layout */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: -3px 6px 6px 5px rgba(0, 0, 0, 0.1); */
+    margin: auto;
+}
+.alert{
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.notification{
+    color: whitesmoke;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0);
+    background-color: rgb(6, 208, 6);
+    padding: 15px 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+ 
+ 
+/* Container for the entire page */
+.editPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  
+}
+ 
+/* Form container */
+.editPage form {
+  width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(245, 245, 245, 0.568);
+  padding: 5%;
+}
+ 
+/* Heading */
+.editPage h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+ 
+/* Labels */
+.editPage label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: whitesmoke;
+}
+ 
+/* Inputs and textarea */
+.editPage input,
+.editPage textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  font-size: 14px;
+}
+.editPage textarea {
+    height: 15vh;
+}
+ 
+/* Submit Buttons */
+.submit_Btn {
+  width: calc(50% - 10px);
+  padding: 10px;
+  margin: 5px;
+  background-color: #087698;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+ 
+/* Cancel button */
+.cancle_Btn{
+  width: calc(50% - 10px);
+  padding: 10px;
+  margin: 5px;
+  background-color: #087698;
+  color: red;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+ 
+/* Button hover effects */
+.submit_Btn:hover {
+  background-color: #0a5f79;
+  color: lightgreen;
+}
+ 
+.cancle_Btn:hover {
+  background-color: #0a5f79;
+}
+ 

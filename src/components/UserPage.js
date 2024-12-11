@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from './HomePage.module.css';
 
 const UserPage = () => {
-
-    const location = useLocation();
-
-    const [books, setBooks] = useState([]); // All books from the API
-    const [filteredBooks, setFilteredBooks] = useState([]); // Books after filtering
-    const [searchQuery, setSearchQuery] = useState(''); // User's search input
-    const [error, setError] = useState(''); // Error message
+    const [books, setBooks] = useState([]);
+    const [filteredBooks, setFilteredBooks] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [error, setError] = useState('');
+    const [currentBackground, setCurrentBackground] = useState(0);
+    const navigate = useNavigate();
+    const backgrounds = [
+        '/Libary2.jpg',
+        '/libary6.jpg',
+        '/libary4.jpg',
+        '/libary5.jpg',
+       
+    ];
 
     // Fetch books from the API
     const FetchBooks = async () => {
@@ -27,7 +33,7 @@ const UserPage = () => {
 
             const data = await response.json();
             setBooks(data);
-            setFilteredBooks(data); // Initially, show all books
+            setFilteredBooks(data);
             setError('');
         } catch (err) {
             console.error('Error fetching books:', err);
@@ -35,11 +41,32 @@ const UserPage = () => {
         }
     };
 
-    // Normalize date for search
-    const normalizeDate = (dateString) => {
-        const date = new Date(dateString);
-        return date.toISOString().split('T')[0]; // Format date as 'YYYY-MM-DD'
+    const handleLogOut = () => {
+        //localStorage.removeItem('token');
+        navigate('/administrator');
     };
+
+    // Cycle through background images
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentBackground((prev) => (prev + 1) % backgrounds.length);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [backgrounds.length]);
+
+    // Set background dynamically
+    useEffect(() => {
+        document.body.style.backgroundImage = `url(${backgrounds[currentBackground]})`;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundRepeat = 'no-repeat';
+        document.body.style.backgroundPosition = 'center';
+        document.body.style.transition = 'background-image 1s ease-in-out';
+
+        return () => {
+            document.body.style.backgroundImage = '';
+        };
+    }, [currentBackground]);
 
     // Handle search functionality
     const handleSearch = (event) => {
@@ -47,19 +74,16 @@ const UserPage = () => {
         setSearchQuery(query);
 
         if (!query.trim()) {
-            // If the query is empty, show all books
             setFilteredBooks(books);
             setError('');
             return;
         }
 
-        // Filter books by title, author, description, or publication date
         const results = books.filter((book) => {
             return (
                 book.title.toLowerCase().includes(query) ||
                 book.author.toLowerCase().includes(query) ||
-                book.description.toLowerCase().includes(query) ||
-                normalizeDate(book.publicationDate).includes(query)
+                book.description.toLowerCase().includes(query)
             );
         });
 
@@ -76,33 +100,13 @@ const UserPage = () => {
         FetchBooks();
     }, []);
 
-    useEffect(() => {
-        document.body.style.backgroundImage = 'url(./backgroundimg.png)';
-        document.body.style.backgroundColor = '#50defb';
-        document.body.style.backgroundSize = 'cover';
-        document.body.style.backgroundRepeat = 'no-repeat';
-        document.body.style.backgroundPosition = 'center';
-        document.body.style.margin = '0';
-        document.body.style.padding = '0';
-
-        return () => {
-            document.body.style.backgroundImage = '';
-            document.body.style.backgroundSize = '';
-            document.body.style.backgroundRepeat = '';
-            document.body.style.backgroundPosition = '';
-            document.body.style.margin = '';
-            document.body.style.padding = '';
-        };
-    }, []);
-
-
     return (
         <div>
             {/* Search Bar */}
             <div className={styles.searchBar}>
                 <input
                     type="text"
-                    placeholder="Search by title, author, description, or date..."
+                    placeholder="Search by title, author, or description..."
                     value={searchQuery}
                     onChange={handleSearch}
                     className={styles.searchInput}
@@ -110,16 +114,20 @@ const UserPage = () => {
             </div>
 
             {/* Error Message */}
-            {error &&<div className="alert"> <p className={styles.errorMessage}>{error}</p> </div>}
+            {error && (
+                <div className="alert">
+                    <p className={styles.errorMessage}>{error}</p>
+                </div>
+            )}
 
             {/* Book Cards */}
+            <button className={styles.Log_Out} onClick={handleLogOut}>Log In As Admin</button>
             <div className={styles.cardContainer}>
                 {filteredBooks.map((book) => (
                     <div key={book.id} className={styles.card}>
                         <img src={book.coverImage} alt={`${book.title} Cover`} />
                         <h1>{book.title}</h1>
                         <h2>{book.author}</h2>
-                        <p style={{display: "none"}}>Published: {normalizeDate(book.publicationDate)}</p>
                         <Link to={`/book/${book.id}`} className={styles.link}>
                             View Details
                         </Link>
